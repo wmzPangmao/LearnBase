@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">LearnBase</string>
+    <!-- mainActivity-->
+    <string name="btn_main_activity">活动Demo</string>
+    <string name="btn_main_broadcast">广播Demo</string>
+    <string name="btn_main_service">服务Demo</string>
+    <!-- serviceActivity-->
+    <string name="btn_service_start">启动服务</string>
+    <string name="btn_service_stop">关闭服务</string>
+    <string name="btn_service_bind">绑定服务</string>
+    <string name="btn_service_intent">启动Intent服务</string>
+</resources>
