@@ -11,7 +11,8 @@ import com.pangmao.learnbase.util.LogUtil;
 
 public class ServiceActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Intent intent = null;
+    private Intent intent = null;
+
 
     public static void onStartActivity(Context context){
         Intent intent = new Intent(context, ServiceActivity.class);
@@ -25,8 +26,18 @@ public class ServiceActivity extends AppCompatActivity implements View.OnClickLi
 
         findViewById(R.id.btn_service_start).setOnClickListener(this);
         findViewById(R.id.btn_service_stop).setOnClickListener(this);
-        findViewById(R.id.btn_service_bind).setOnClickListener(this);
         findViewById(R.id.btn_service_intent).setOnClickListener(this);
+        findViewById(R.id.btn_service_bind_1).setOnClickListener(this);
+        findViewById(R.id.btn_service_bind_2).setOnClickListener(this);
+        findViewById(R.id.btn_service_bind_3).setOnClickListener(this);
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(intent != null) {
+            stopService(intent);
+            intent = null;
+        }
     }
 
     @Override
@@ -46,12 +57,20 @@ public class ServiceActivity extends AppCompatActivity implements View.OnClickLi
                     intent = null;
                 }
                 break;
-            case R.id.btn_service_bind:
-                LogUtil.log("btn_service_bind");
-                break;
             case R.id.btn_service_intent:
                 LogUtil.log("btn_service_intent");
                 MyIntentService.startActionFoo(this, "kkk", "ll");
+                break;
+            case R.id.btn_service_bind_1:
+                LogUtil.log("btn_service_bind_1");
+                LocalActivity.onStartActivity(this);
+                break;
+            case R.id.btn_service_bind_2:
+                LogUtil.log("btn_service_bind_2");
+                MessengerActivity.onStartActivity(this);
+                break;
+            case R.id.btn_service_bind_3:
+                LogUtil.log("btn_service_bind_3");
                 break;
             default:
         }

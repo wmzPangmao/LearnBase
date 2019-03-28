@@ -7,6 +7,7 @@
     <!-- serviceActivity-->
     <string name="btn_service_start">启动服务</string>
     <string name="btn_service_stop">关闭服务</string>
-    <string name="btn_service_bind">绑定服务</string>
     <string name="btn_service_intent">启动Intent服务</string>
+    <string name="btn_service_bind">绑定服务</string>
+    <string name="btn_service_unbind">解除绑定</string>
 </resources>

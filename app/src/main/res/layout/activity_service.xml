@@ -5,8 +5,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".service.ServiceActivity"
-    tools:layout_editor_absoluteY="81dp">
+    tools:context=".service.ServiceActivity">
+
+    <android.support.v7.widget.Toolbar xmlns:app="http://schemas.android.com/apk/res-auto"
+                                       android:id="@+id/tb_toolbar"
+                                       android:layout_width="0dp"
+                                       android:layout_height="?attr/actionBarSize"
+                                       android:background="@color/colorPrimary"
+                                       app:layout_constraintEnd_toEndOf="parent"
+                                       app:layout_constraintStart_toStartOf="parent"
+                                       app:layout_constraintTop_toTopOf="parent"
+                                       app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="学习Service" />
+
+    </android.support.v7.widget.Toolbar>
 
     <Button
         android:id="@+id/btn_service_start"
@@ -26,31 +44,50 @@
         android:id="@+id/btn_service_stop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginTop="8dp"
         android:text="@string/btn_service_stop"
-        app:layout_constraintEnd_toEndOf="@+id/btn_service_start"
-        app:layout_constraintTop_toBottomOf="@+id/btn_service_start"
-        />
-
-    <Button
-        android:id="@+id/btn_service_bind"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="38dp"
-        android:text="@string/btn_service_bind"
-        app:layout_constraintStart_toStartOf="@+id/btn_service_stop"
-        app:layout_constraintTop_toBottomOf="@+id/btn_service_stop"
-        />
+        app:layout_constraintStart_toStartOf="@+id/btn_service_start"
+        app:layout_constraintTop_toBottomOf="@+id/btn_service_start"/>
 
     <Button
         android:id="@+id/btn_service_intent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="24dp"
         android:text="@string/btn_service_intent"
-        app:layout_constraintEnd_toEndOf="@+id/btn_service_bind"
-        app:layout_constraintTop_toBottomOf="@+id/btn_service_bind"
-        />
+        app:layout_constraintStart_toStartOf="@+id/btn_service_stop"
+        app:layout_constraintTop_toBottomOf="@+id/btn_service_stop"/>
+
+    <Button
+        android:id="@+id/btn_service_bind_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="绑定服务方法1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_service_intent"/>
+
+    <Button
+        android:id="@+id/btn_service_bind_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="绑定服务方法2"
+        app:layout_constraintStart_toStartOf="@+id/btn_service_bind_1"
+        app:layout_constraintTop_toBottomOf="@+id/btn_service_bind_1"/>
+
+    <Button
+        android:id="@+id/btn_service_bind_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="绑定服务方法3"
+        app:layout_constraintStart_toStartOf="@+id/btn_service_bind_2"
+        app:layout_constraintTop_toBottomOf="@+id/btn_service_bind_2"/>
 </android.support.constraint.ConstraintLayout>

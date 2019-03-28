@@ -29,30 +29,30 @@ public class MutilService extends Service {
             //为每个请求创建线程,保证同时处理
             new MyThread(msg.arg1).start();
         }
-    }
 
-    private class MyThread extends Thread{
-        int transId;
+        private class MyThread extends Thread{
+            int transId;
 
-        MyThread(int transId) {
-            this.transId = transId;
-        }
+            MyThread(int transId) {
+                this.transId = transId;
+            }
 
-        @Override
-        public void run() {
-            super.run();
-            final long endTime = System.currentTimeMillis() + 5 * 1000;
-            while (System.currentTimeMillis() < endTime) {
-                synchronized (this) {
-                    try {
-                        wait(endTime - System.currentTimeMillis());
-                    } catch (Exception e) {
-                        e.printStackTrace();
+            @Override
+            public void run() {
+                super.run();
+                final long endTime = System.currentTimeMillis() + 5 * 1000;
+                while (System.currentTimeMillis() < endTime) {
+                    synchronized (this) {
+                        try {
+                            wait(endTime - System.currentTimeMillis());
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
+                LogUtil.log("处理业务结束:" + transId);
+                stopSelf(transId);
             }
-            LogUtil.log("处理业务结束:" + transId);
-            stopSelf(transId);
         }
     }
 
@@ -84,6 +84,8 @@ public class MutilService extends Service {
     @Override
     public void onDestroy() {
         LogUtil.log("service done");
+        if(mServiceLooper != null) {
+            mServiceLooper.quit();
+        }
     }
-
 }
