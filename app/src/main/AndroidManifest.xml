@@ -63,6 +63,16 @@
         </activity>
         <activity android:name=".service.MessengerActivity">
         </activity>
+
+        <service
+            android:name=".service.AIDLService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.pangmao.learn.aidl"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
