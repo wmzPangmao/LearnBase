@@ -18,6 +18,7 @@ import java.util.logging.Logger;
  */
 public class HandlerActivity extends BaseActivity implements View.OnClickListener {
 
+    private MyHandler handler1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,17 @@ public class HandlerActivity extends BaseActivity implements View.OnClickListene
         setContentView(R.layout.activity_handler);
 
         findViewById(R.id.btn_handler_send).setOnClickListener(this);
+
+        // 将当前线程初始化为Looper线程
+        MyLooper.prepare();
+        // 实例化handler
+        handler1 = new MyHandler(){
+            @Override
+            public void handleMessage(MyMessage msg) {
+                LogUtil.log("Thread" + Thread.currentThread() + "--recv1: " + msg.toString());
+            }
+        };
+
     }
 
 
@@ -39,6 +51,7 @@ public class HandlerActivity extends BaseActivity implements View.OnClickListene
             case R.id.btn_handler_send:
                 new LooperThread().start();
                 showToast("handler消息测试");
+                MyLooper.loop();
                 break;
                 default:
         }
@@ -46,22 +59,14 @@ public class HandlerActivity extends BaseActivity implements View.OnClickListene
 
 
     class LooperThread extends Thread {
-        private MyHandler handler1;
+
         private MyHandler handler2;
 
         @Override
         public void run() {
             // 将当前线程初始化为Looper线程
             MyLooper.prepare();
-
-            // 实例化两个handler
-            handler1 = new MyHandler(){
-                @Override
-                public void handleMessage(MyMessage msg) {
-                    LogUtil.log("Thread" + Thread.currentThread() + "--recv1: " + msg.toString());
-                }
-            };
-
+            // 实例化handler
             handler2 = new MyHandler(){
                 @Override
                 public void handleMessage(MyMessage msg) {

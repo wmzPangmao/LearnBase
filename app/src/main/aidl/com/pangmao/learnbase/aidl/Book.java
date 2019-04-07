@@ -44,6 +44,7 @@ public class Book implements Parcelable {
 
     /**
      * 参数是一个Parcel,用它来存储与传输数据
+     * 实现此方法后对象在AIDL文件里就可以用 out 或者 inout 来作为它的定向 tag 了
      */
     public void readFromParcel(Parcel dest) {
         //注意，此处的读值顺序应当是和writeToParcel()方法中一致的
