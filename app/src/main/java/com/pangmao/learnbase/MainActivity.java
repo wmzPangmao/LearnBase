@@ -1,16 +1,20 @@
 package com.pangmao.learnbase;
 
+import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.pangmao.learnbase.activity.IntentActivity;
+import com.pangmao.learnbase.broadcast.BroadcastActivity;
+import com.pangmao.learnbase.handler.HandlerActivity;
 import com.pangmao.learnbase.service.ServiceActivity;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+/**
+ * @author wangmingzhi
+ */
+public class MainActivity extends BaseActivity implements View.OnClickListener {
 
-    // Used to load the 'native-lib' library on application startup.
-
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +24,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_main_activity).setOnClickListener(this);
         findViewById(R.id.btn_main_broadcast).setOnClickListener(this);
         findViewById(R.id.btn_main_service).setOnClickListener(this);
+        findViewById(R.id.btn_main_handler).setOnClickListener(this);
+
+        context = this;
     }
 
 
@@ -27,13 +34,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_main_activity:
-                IntentActivity.onStartActivity(this);
+                IntentActivity.onStartActivity(context);
                 break;
             case R.id.btn_main_broadcast:
-
+                BroadcastActivity.onStartActivity(context);
                 break;
             case R.id.btn_main_service:
-                ServiceActivity.onStartActivity(this);
+                ServiceActivity.onStartActivity(context);
+                break;
+            case R.id.btn_main_handler:
+                HandlerActivity.onStartActivity(context);
                 break;
                 default:
         }

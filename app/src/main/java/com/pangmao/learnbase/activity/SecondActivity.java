@@ -6,12 +6,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.pangmao.learnbase.BaseActivity;
 import com.pangmao.learnbase.R;
 
 /**
  * @author wangmingzhi
  */
-public class SecondActivity extends AppCompatActivity {
+public class SecondActivity extends BaseActivity {
 
     public final static String ACTION = "android.intent.action.SencondActivity";
 

@@ -9,10 +9,11 @@ import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.pangmao.learnbase.BaseActivity;
 import com.pangmao.learnbase.R;
 import com.pangmao.learnbase.util.LogUtil;
 
-public class LocalActivity extends AppCompatActivity implements View.OnClickListener {
+public class LocalActivity extends BaseActivity implements View.OnClickListener {
 
     private LoaclService mService = null;
     private boolean mBound = false;
@@ -30,7 +31,7 @@ public class LocalActivity extends AppCompatActivity implements View.OnClickList
             //获取绑定的服务
             mService = myBinder.getService();
             mBound = true;
-            LogUtil.log("绑定成功");
+            LogUtil.log(TAG,"绑定成功");
         }
         /**
          * Android系统会在与服务的连接意外中断时（例如当服务崩溃或被终止时）调用该方法。
@@ -40,7 +41,7 @@ public class LocalActivity extends AppCompatActivity implements View.OnClickList
         public void onServiceDisconnected(ComponentName arg0) {
             mBound = false;
             mService = null;
-            LogUtil.log("绑定意外解除!");
+            LogUtil.log(TAG,"绑定意外解除!");
         }
     };
 
@@ -60,7 +61,7 @@ public class LocalActivity extends AppCompatActivity implements View.OnClickList
         if(mBound) {
             unbindService(mConnection);
             mBound = false;
-            LogUtil.log("解除绑定成功!");
+            LogUtil.log(TAG,"解除绑定成功!");
         }
     }
 
@@ -68,14 +69,14 @@ public class LocalActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_service_bind:
-                LogUtil.log("btn_service_bind");
+                LogUtil.log(TAG,"btn_service_bind");
                 if (!mBound) {
                     intent = new Intent(this, LoaclService.class);
                     bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
                 }
                 break;
             case R.id.btn_service_unbind:
-                LogUtil.log("btn_service_unbind");
+                LogUtil.log(TAG,"btn_service_unbind");
                 if (mBound) {
                     unbindService(mConnection);
                     mBound = false;
@@ -83,7 +84,7 @@ public class LocalActivity extends AppCompatActivity implements View.OnClickList
                 }
                 break;
             case R.id.btn_service_test:
-                LogUtil.log("btn_service_test");
+                LogUtil.log(TAG,"btn_service_test");
                 if (mBound) {
                     mService.printMsg();
                     mService.setMsg("hello world...");

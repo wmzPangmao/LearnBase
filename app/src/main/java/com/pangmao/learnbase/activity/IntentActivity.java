@@ -9,20 +9,17 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.pangmao.learnbase.BaseActivity;
 import com.pangmao.learnbase.R;
+import com.pangmao.learnbase.handler.HandlerActivity;
 
 /**
  * @author wangmingzhi
  */
-public class IntentActivity extends AppCompatActivity implements View.OnClickListener {
+public class IntentActivity extends BaseActivity implements View.OnClickListener {
 
     private Context context;
     private Intent intent;
-
-    public static void onStartActivity(Context context){
-        Intent intent = new Intent(context, IntentActivity.class);
-        context.startActivity(intent);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,5 +76,10 @@ public class IntentActivity extends AppCompatActivity implements View.OnClickLis
         }else {
             Log.d("TAG", "Action:" + intent.getAction() + "\tCategory" + intent.getCategories() + "匹配不存在!");
         }
+    }
+
+    public static void onStartActivity(Context context){
+        Intent intent = new Intent(context, IntentActivity.class);
+        context.startActivity(intent);
     }
 }
