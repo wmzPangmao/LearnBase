@@ -1,9 +1,9 @@
 // BookManager.aidl
 //第二类AIDL文件
 //作用是定义方法接口
-package com.pangmao.learnbase.aidl;
+package com.pangmao.learnbase;
 //导入所需要使用的非默认支持数据类型的包
-import com.pangmao.learnbase.aidl.Book;
+import com.pangmao.learnbase.Book;
 
 interface BookManager {
      //所有的返回值前都不需要加任何东西，不管是什么数据类型

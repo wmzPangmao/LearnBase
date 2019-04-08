@@ -1,4 +1,4 @@
-package com.pangmao.learnbase.aidl;
+package com.pangmao.learnbase;
 
 import android.os.Parcel;
 import android.os.Parcelable;

@@ -5,8 +5,8 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.os.RemoteException;
 
-import com.pangmao.learnbase.aidl.Book;
-import com.pangmao.learnbase.aidl.BookManager;
+import com.pangmao.learnbase.Book;
+import com.pangmao.learnbase.BookManager;
 import com.pangmao.learnbase.util.LogUtil;
 
 import java.util.ArrayList;
