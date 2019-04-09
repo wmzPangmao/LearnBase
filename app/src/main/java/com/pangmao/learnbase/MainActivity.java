@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.pangmao.learnbase.activity.IntentActivity;
 import com.pangmao.learnbase.broadcast.BroadcastActivity;
+import com.pangmao.learnbase.fragment.Fragment2Activity;
 import com.pangmao.learnbase.handler.HandlerActivity;
 import com.pangmao.learnbase.service.ServiceActivity;
 
@@ -25,6 +26,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         findViewById(R.id.btn_main_broadcast).setOnClickListener(this);
         findViewById(R.id.btn_main_service).setOnClickListener(this);
         findViewById(R.id.btn_main_handler).setOnClickListener(this);
+        findViewById(R.id.btn_main_fragment).setOnClickListener(this);
 
         context = this;
     }
@@ -44,6 +46,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.btn_main_handler:
                 HandlerActivity.onStartActivity(context);
+                break;
+            case R.id.btn_main_fragment:
+                Fragment2Activity.onStartActivity(context);
                 break;
                 default:
         }

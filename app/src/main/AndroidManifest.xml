@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.pangmao.learnbase">
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.pangmao.learnbase">
 
     <application
         android:allowBackup="true"
@@ -13,64 +13,65 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".service.ServiceActivity" />
-        <activity android:name=".activity.IntentActivity" />
+        <activity android:name=".service.ServiceActivity"/>
+        <activity android:name=".activity.IntentActivity"/>
         <activity android:name=".activity.SecondActivity">
             <intent-filter>
-                <action android:name="android.intent.action.SencondActivity" />
+                <action android:name="android.intent.action.SencondActivity"/>
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.MYDEF" />
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.MYDEF"/>
             </intent-filter>
         </activity>
 
         <service
             android:name=".service.MyIntentService"
-            android:exported="false" />
+            android:exported="false"/>
         <service
             android:name=".service.MyService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true"/>
         <service
             android:name=".service.MutilService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true"/>
         <service
             android:name=".service.LoaclService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true"/>
         <service
             android:name=".service.MessengerService"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.pangmao.messenger" />
+                <action android:name="com.pangmao.messenger"/>
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </service>
 
-        <activity android:name=".service.LocalActivity" />
-        <activity android:name=".service.MessengerActivity" />
+        <activity android:name=".service.LocalActivity"/>
+        <activity android:name=".service.MessengerActivity"/>
 
         <service
             android:name=".service.AIDLService"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.pangmao.learn.aidl" />
+                <action android:name="com.pangmao.learn.aidl"/>
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </service>
 
-        <activity android:name=".broadcast.BroadcastActivity" />
-        <activity android:name=".handler.HandlerActivity"></activity>
+        <activity android:name=".broadcast.BroadcastActivity"/>
+        <activity android:name=".handler.HandlerActivity"/>
+        <activity android:name=".fragment.Fragment2Activity"/>
     </application>
 
 </manifest>
