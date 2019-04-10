@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.pangmao.learnbase.BaseActivity;
 import com.pangmao.learnbase.R;
+import com.pangmao.learnbase.util.LogUtil;
 
 public class Fragment2Activity extends BaseActivity implements View.OnClickListener {
 
@@ -30,7 +31,7 @@ public class Fragment2Activity extends BaseActivity implements View.OnClickListe
 
         fragment = Content1Fragment.newInstance("hello", "wrold");
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fg_fragmetn2_content, fragment)
+                .replace(R.id.fg_fragmetn2_content, fragment, "tag1")
                 .commit();
     }
 
@@ -50,7 +51,8 @@ public class Fragment2Activity extends BaseActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_fragment_content1:
-                fragment = getSupportFragmentManager().findFragmentById(R.id.fg_fragmetn2_content);
+//                fragment = getSupportFragmentManager().findFragmentById(R.id.fg_fragmetn2_content);
+                fragment = getSupportFragmentManager().findFragmentByTag("tag1");
                 if(!(fragment instanceof Content1Fragment)) {
                     fragment = Content1Fragment.newInstance("hello", "wrold");
                     replaceFragment(fragment);
@@ -72,5 +74,9 @@ public class Fragment2Activity extends BaseActivity implements View.OnClickListe
                 break;
                 default:
         }
+    }
+
+    public void testFunc(String str) {
+        LogUtil.log(str);
     }
 }

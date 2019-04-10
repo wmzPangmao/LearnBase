@@ -29,6 +29,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         findViewById(R.id.btn_main_fragment).setOnClickListener(this);
 
         context = this;
+
+//        BaseApplication app = (BaseApplication) getApplication();
+//        String appStr = app.getAppStr();
+//        LogUtil.log(appStr);
+//        appStr = "123";
+//        app.setAppStr(appStr);
     }
 
 

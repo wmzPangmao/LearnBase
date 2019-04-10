@@ -84,6 +84,10 @@ public class Content1Fragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_content1, container, false);
         TextView tv = view.findViewById(R.id.tv_fragment_content1);
         tv.setText(mParam1 + "," + mParam2);
+        Fragment2Activity activity = (Fragment2Activity) getActivity();
+        if(activity != null) {
+            activity.testFunc(tv.getText().toString());
+        }
         return view;
     }
 
