@@ -7,6 +7,7 @@ import android.os.Looper;
 import android.view.View;
 
 import com.pangmao.learnbase.BaseActivity;
+import com.pangmao.learnbase.MainActivity;
 import com.pangmao.learnbase.R;
 import com.pangmao.learnbase.util.LogUtil;
 
@@ -52,6 +53,10 @@ public class HandlerActivity extends BaseActivity implements View.OnClickListene
                 new LooperThread().start();
                 showToast("handler消息测试");
                 MyLooper.loop();
+                break;
+            case R.id.btn_handler_async:
+                AsyncTaskDemo asy = new AsyncTaskDemo();
+                asy.execute(HandlerActivity.this);
                 break;
                 default:
         }

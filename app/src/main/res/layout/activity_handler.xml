@@ -21,11 +21,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_handler_async"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
-        android:text="Button"
+        android:text="AsyncTask"
         app:layout_constraintStart_toStartOf="@+id/btn_handler_send"
         app:layout_constraintTop_toBottomOf="@+id/btn_handler_send" />
 
@@ -35,6 +35,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="74dp"
         android:text="Button"
-        app:layout_constraintStart_toStartOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintStart_toStartOf="@+id/btn_handler_async"
+        app:layout_constraintTop_toBottomOf="@+id/btn_handler_async" />
 </android.support.constraint.ConstraintLayout>
