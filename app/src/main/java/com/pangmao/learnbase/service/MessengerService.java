@@ -9,7 +9,7 @@ import android.os.Message;
 import android.os.Messenger;
 import android.widget.Toast;
 
-import com.pangmao.learnbase.util.LogUtil;
+import com.pangmao.learnbase.util.LoggUtil;
 
 public class MessengerService extends Service {
     public static final int MSG_SAY_HELLO = 1;
@@ -33,7 +33,7 @@ public class MessengerService extends Service {
 
     @Override
     public IBinder onBind(Intent intent) {
-        LogUtil.log("MessengerService binding");
+        LoggUtil.log("MessengerService binding");
         //返回给客户端一个IBinder实例
         return mMessenger.getBinder();
     }

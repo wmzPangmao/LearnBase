@@ -70,7 +70,16 @@
         </service>
 
         <activity android:name=".broadcast.BroadcastActivity" />
-        <activity android:name=".handler.HandlerActivity"></activity>
+        <activity android:name=".handler.HandlerActivity" />
+
+        <receiver
+            android:name=".broadcast.MyReceiver1"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="10">
+                <action android:name="com.pangmao.learnBase.Broadcast.receiver1" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

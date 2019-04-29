@@ -5,7 +5,7 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-import com.pangmao.learnbase.util.LogUtil;
+import com.pangmao.learnbase.util.LoggUtil;
 
 /**
  * @author wangmingzhi
@@ -35,7 +35,7 @@ public class AsyncTaskDemo extends AsyncTask<AppCompatActivity, Integer, Boolean
      */
     @Override
     protected Boolean doInBackground(AppCompatActivity... params) {
-        LogUtil.log("runing");
+        LoggUtil.log("runing");
         context = params[0];
         for (int i = 0; i < 10; i++){
             publishProgress(i);
@@ -55,7 +55,7 @@ public class AsyncTaskDemo extends AsyncTask<AppCompatActivity, Integer, Boolean
     @Override
     protected void onProgressUpdate(Integer... values) {
         super.onProgressUpdate(values);
-        LogUtil.log("values:" + values);
+        LoggUtil.log("values:" + values);
     }
 
     /**

@@ -4,7 +4,7 @@ import android.app.IntentService;
 import android.content.Intent;
 import android.content.Context;
 
-import com.pangmao.learnbase.util.LogUtil;
+import com.pangmao.learnbase.util.LoggUtil;
 
 /**
  * An {@link IntentService} subclass for handling asynchronous task requests in
@@ -56,13 +56,13 @@ public class MyIntentService extends IntentService {
      */
     private void handleActionFoo(String param1, String param2) {
         // TODO: Handle action Foo
-        LogUtil.log("参数一:" + param1);
-        LogUtil.log("参数二:" + param2);
+        LoggUtil.log("参数一:" + param1);
+        LoggUtil.log("参数二:" + param2);
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        LogUtil.log("IntentService onDestroy");
+        LoggUtil.log("IntentService onDestroy");
     }
 }
