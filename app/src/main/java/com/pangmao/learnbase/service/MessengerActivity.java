@@ -9,12 +9,11 @@ import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.pangmao.learnbase.BaseActivity;
 import com.pangmao.learnbase.R;
-import com.pangmao.learnbase.util.LogUtil;
+import com.pangmao.learnbase.util.LoggUtil;
 
 public class MessengerActivity extends BaseActivity implements View.OnClickListener  {
 
@@ -32,7 +31,7 @@ public class MessengerActivity extends BaseActivity implements View.OnClickListe
             //获取绑定的服务
             mService = new Messenger(service);
             mBound = true;
-            LogUtil.log(TAG,"绑定成功");
+            LoggUtil.log(TAG,"绑定成功");
         }
         /**
          * Android系统会在与服务的连接意外中断时（例如当服务崩溃或被终止时）调用该方法。
@@ -42,7 +41,7 @@ public class MessengerActivity extends BaseActivity implements View.OnClickListe
         public void onServiceDisconnected(ComponentName arg0) {
             mBound = false;
             mService = null;
-            LogUtil.log(TAG,"绑定意外解除!");
+            LoggUtil.log(TAG,"绑定意外解除!");
         }
     };
 
@@ -62,7 +61,7 @@ public class MessengerActivity extends BaseActivity implements View.OnClickListe
         if(mBound) {
             unbindService(mConnection);
             mBound = false;
-            LogUtil.log(TAG,"解除绑定成功");
+            LoggUtil.log(TAG,"解除绑定成功");
         }
     }
 
@@ -70,22 +69,22 @@ public class MessengerActivity extends BaseActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_service_bind2:
-                LogUtil.log(TAG,"btn_service_bind");
+                LoggUtil.log(TAG,"btn_service_bind");
                 if (!mBound) {
                     intent = new Intent(this, MessengerService.class);
                     bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
                 }
                 break;
             case R.id.btn_service_unbind2:
-                LogUtil.log(TAG,"btn_service_unbind");
+                LoggUtil.log(TAG,"btn_service_unbind");
                 if (mBound) {
                     unbindService(mConnection);
                     mBound = false;
-                    LogUtil.log(TAG,"解除绑定成功");
+                    LoggUtil.log(TAG,"解除绑定成功");
                 }
                 break;
             case R.id.btn_service_test2:
-                LogUtil.log(TAG,"btn_service_test");
+                LoggUtil.log(TAG,"btn_service_test");
                 if (mBound) {
                     sayHello();
                 }

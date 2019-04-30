@@ -7,7 +7,7 @@ import android.os.RemoteException;
 
 import com.pangmao.learnbase.Book;
 import com.pangmao.learnbase.BookManager;
-import com.pangmao.learnbase.util.LogUtil;
+import com.pangmao.learnbase.util.LoggUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +24,7 @@ public class AIDLService extends Service {
         @Override
         public List<Book> getBooks() throws RemoteException {
             synchronized (this) {
-                LogUtil.log("invoking getBooks() method , now the list is : " + mBooks.toString());
+                LoggUtil.log("invoking getBooks() method , now the list is : " + mBooks.toString());
                 if (mBooks != null) {
                     return mBooks;
                 }
@@ -40,7 +40,7 @@ public class AIDLService extends Service {
                     mBooks = new ArrayList<>();
                 }
                 if (book == null) {
-                    LogUtil.log("Book is null in In");
+                    LoggUtil.log("Book is null in In");
                     book = new Book();
                 }
                 //尝试修改book的参数，主要是为了观察其到客户端的反馈
@@ -49,7 +49,7 @@ public class AIDLService extends Service {
                     mBooks.add(book);
                 }
                 //打印mBooks列表，观察客户端传过来的值
-                LogUtil.log("invoking addBooks() method , now the list is : " + mBooks.toString());
+                LoggUtil.log("invoking addBooks() method , now the list is : " + mBooks.toString());
             }
         }
     };
@@ -65,7 +65,7 @@ public class AIDLService extends Service {
 
     @Override
     public IBinder onBind(Intent intent) {
-        LogUtil.log(String.format("on bind,intent = %s", intent.toString()));
+        LoggUtil.log(String.format("on bind,intent = %s", intent.toString()));
         return mBookManager;
     }
 

@@ -3,15 +3,13 @@ package com.pangmao.learnbase.handler;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Looper;
 import android.view.View;
 
 import com.pangmao.learnbase.BaseActivity;
 import com.pangmao.learnbase.R;
-import com.pangmao.learnbase.util.LogUtil;
+import com.pangmao.learnbase.util.LoggUtil;
 
 import java.util.UUID;
-import java.util.logging.Logger;
 
 /**
  * @author wangmingzhi
@@ -33,7 +31,7 @@ public class HandlerActivity extends BaseActivity implements View.OnClickListene
         handler1 = new MyHandler(){
             @Override
             public void handleMessage(MyMessage msg) {
-                LogUtil.log("Thread" + Thread.currentThread() + "--recv1: " + msg.toString());
+                LoggUtil.log("Thread" + Thread.currentThread() + "--recv1: " + msg.toString());
             }
         };
 
@@ -53,6 +51,10 @@ public class HandlerActivity extends BaseActivity implements View.OnClickListene
                 showToast("handler消息测试");
                 MyLooper.loop();
                 break;
+            case R.id.btn_handler_async:
+                AsyncTaskDemo asy = new AsyncTaskDemo();
+                asy.execute(HandlerActivity.this);
+                break;
                 default:
         }
     }
@@ -70,27 +72,27 @@ public class HandlerActivity extends BaseActivity implements View.OnClickListene
             handler2 = new MyHandler(){
                 @Override
                 public void handleMessage(MyMessage msg) {
-                    LogUtil.log("Thread" + Thread.currentThread() + "--recv2: " + msg.toString());
+                    LoggUtil.log("Thread" + Thread.currentThread() + "--recv2: " + msg.toString());
                 }
             };
 
             for (int i = 0; i < 10; i++){
                 MyMessage msg = new MyMessage();
                 msg.obj = UUID.randomUUID().toString();
-                LogUtil.log("Thread" + Thread.currentThread() + "--send1: " + msg.obj.toString());
+                LoggUtil.log("Thread" + Thread.currentThread() + "--send1: " + msg.obj.toString());
                 //发送消息
                 handler1.sendMessage(msg);
             }
             for (int j = 0; j < 10; j++){
                 MyMessage msg = new MyMessage();
                 msg.obj = UUID.randomUUID().toString();
-                LogUtil.log("Thread" + Thread.currentThread() + "--send2: " + msg.obj.toString());
+                LoggUtil.log("Thread" + Thread.currentThread() + "--send2: " + msg.obj.toString());
                 //发送消息
                 handler2.sendMessage(msg);
             }
             // 开始循环处理消息队列
             MyLooper.loop();
-            LogUtil.log("end");
+            LoggUtil.log("end");
         }
     }
 }

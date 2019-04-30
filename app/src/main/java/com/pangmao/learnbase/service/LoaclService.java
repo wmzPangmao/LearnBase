@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 
-import com.pangmao.learnbase.util.LogUtil;
+import com.pangmao.learnbase.util.LoggUtil;
 
 public class LoaclService extends Service {
 
@@ -32,19 +32,19 @@ public class LoaclService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        LogUtil.log("LoaclService onCreate");
+        LoggUtil.log("LoaclService onCreate");
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        LogUtil.log("LoaclService onStartCommand");
+        LoggUtil.log("LoaclService onStartCommand");
         return super.onStartCommand(intent, flags, startId);
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        LogUtil.log("LoaclService onDestroy");
+        LoggUtil.log("LoaclService onDestroy");
     }
 
     public void setMsg(String msg) {
@@ -52,7 +52,7 @@ public class LoaclService extends Service {
     }
 
     public void printMsg(){
-        LogUtil.log(msg);
+        LoggUtil.log(msg);
     }
 }
 

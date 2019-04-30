@@ -8,7 +8,7 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.Message;
 
-import com.pangmao.learnbase.util.LogUtil;
+import com.pangmao.learnbase.util.LoggUtil;
 
 /**
  * 同时处理多个请求
@@ -25,7 +25,7 @@ public class MutilService extends Service {
 
         @Override
         public void handleMessage(Message msg) {
-            LogUtil.log("处理业务开始:" + msg.arg1);
+            LoggUtil.log("处理业务开始:" + msg.arg1);
             //为每个请求创建线程,保证同时处理
             new MyThread(msg.arg1).start();
         }
@@ -50,7 +50,7 @@ public class MutilService extends Service {
                         }
                     }
                 }
-                LogUtil.log("处理业务结束:" + transId);
+                LoggUtil.log("处理业务结束:" + transId);
                 stopSelf(transId);
             }
         }
@@ -68,7 +68,7 @@ public class MutilService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        LogUtil.log("service starting " + startId);
+        LoggUtil.log("service starting " + startId);
         Message msg = mServiceHandler.obtainMessage();
         msg.arg1 = startId;
         mServiceHandler.sendMessage(msg);
@@ -83,7 +83,7 @@ public class MutilService extends Service {
 
     @Override
     public void onDestroy() {
-        LogUtil.log("service done");
+        LoggUtil.log("service done");
         if(mServiceLooper != null) {
             mServiceLooper.quit();
         }
