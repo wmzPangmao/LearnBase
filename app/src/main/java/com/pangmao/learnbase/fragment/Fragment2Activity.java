@@ -9,7 +9,7 @@ import android.view.View;
 
 import com.pangmao.learnbase.BaseActivity;
 import com.pangmao.learnbase.R;
-import com.pangmao.learnbase.util.LogUtil;
+import com.pangmao.learnbase.util.LoggUtil;
 
 public class Fragment2Activity extends BaseActivity implements View.OnClickListener {
 
@@ -77,6 +77,6 @@ public class Fragment2Activity extends BaseActivity implements View.OnClickListe
     }
 
     public void testFunc(String str) {
-        LogUtil.log(str);
+        LoggUtil.log(str);
     }
 }

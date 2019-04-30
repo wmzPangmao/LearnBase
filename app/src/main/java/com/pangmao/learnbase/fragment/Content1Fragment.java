@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.pangmao.learnbase.R;
-import com.pangmao.learnbase.util.LogUtil;
+import com.pangmao.learnbase.util.LoggUtil;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,7 +59,7 @@ public class Content1Fragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        LogUtil.log("Content1Fragment onAttach");
+        LoggUtil.log("Content1Fragment onAttach");
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         }
@@ -68,7 +68,7 @@ public class Content1Fragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LogUtil.log("Content1Fragment onCreate");
+        LoggUtil.log("Content1Fragment onCreate");
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -80,7 +80,7 @@ public class Content1Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        LogUtil.log("Content1Fragment onCreateView");
+        LoggUtil.log("Content1Fragment onCreateView");
         View view = inflater.inflate(R.layout.fragment_content1, container, false);
         TextView tv = view.findViewById(R.id.tv_fragment_content1);
         tv.setText(mParam1 + "," + mParam2);
@@ -94,50 +94,50 @@ public class Content1Fragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        LogUtil.log("Content1Fragment onActivityCreated");
+        LoggUtil.log("Content1Fragment onActivityCreated");
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        LogUtil.log("Content1Fragment onStart");
+        LoggUtil.log("Content1Fragment onStart");
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        LogUtil.log("Content1Fragment onResume");
+        LoggUtil.log("Content1Fragment onResume");
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        LogUtil.log("Content1Fragment onPause");
+        LoggUtil.log("Content1Fragment onPause");
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        LogUtil.log("Content1Fragment onStop");
+        LoggUtil.log("Content1Fragment onStop");
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        LogUtil.log("Content1Fragment onDestroyView");
+        LoggUtil.log("Content1Fragment onDestroyView");
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        LogUtil.log("Content1Fragment onDestroy");
+        LoggUtil.log("Content1Fragment onDestroy");
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
         mListener = null;
-        LogUtil.log("Content1Fragment onDetach");
+        LoggUtil.log("Content1Fragment onDetach");
     }
 
 

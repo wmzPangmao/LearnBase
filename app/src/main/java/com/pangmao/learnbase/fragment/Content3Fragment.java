@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.pangmao.learnbase.R;
-import com.pangmao.learnbase.util.LogUtil;
+import com.pangmao.learnbase.util.LoggUtil;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,7 +58,7 @@ public class Content3Fragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        LogUtil.log("Content3Fragment onAttach");
+        LoggUtil.log("Content3Fragment onAttach");
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         }
@@ -66,7 +66,7 @@ public class Content3Fragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LogUtil.log("Content3Fragment onCreate");
+        LoggUtil.log("Content3Fragment onCreate");
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -77,7 +77,7 @@ public class Content3Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        LogUtil.log("Content3Fragment onCreateView");
+        LoggUtil.log("Content3Fragment onCreateView");
         View view = inflater.inflate(R.layout.fragment_content3, container, false);
         TextView tv = view.findViewById(R.id.tv_fragment_content3);
         tv.setText(mParam1 + "," + mParam2);
@@ -87,50 +87,50 @@ public class Content3Fragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        LogUtil.log("Content3Fragment onActivityCreated");
+        LoggUtil.log("Content3Fragment onActivityCreated");
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        LogUtil.log("Content3Fragment onStart");
+        LoggUtil.log("Content3Fragment onStart");
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        LogUtil.log("Content3Fragment onResume");
+        LoggUtil.log("Content3Fragment onResume");
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        LogUtil.log("Content3Fragment onPause");
+        LoggUtil.log("Content3Fragment onPause");
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        LogUtil.log("Content3Fragment onStop");
+        LoggUtil.log("Content3Fragment onStop");
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        LogUtil.log("Content3Fragment onDestroyView");
+        LoggUtil.log("Content3Fragment onDestroyView");
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        LogUtil.log("Content3Fragment onDestroy");
+        LoggUtil.log("Content3Fragment onDestroy");
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
         mListener = null;
-        LogUtil.log("Content3Fragment onDetach");
+        LoggUtil.log("Content3Fragment onDetach");
     }
 
     // TODO: Rename method, update argument and hook method into UI event

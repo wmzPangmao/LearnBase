@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.pangmao.learnbase.R;
-import com.pangmao.learnbase.util.LogUtil;
+import com.pangmao.learnbase.util.LoggUtil;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,7 +58,7 @@ public class Content2Fragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        LogUtil.log("Content2Fragment onAttach");
+        LoggUtil.log("Content2Fragment onAttach");
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         }
@@ -66,7 +66,7 @@ public class Content2Fragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LogUtil.log("Content2Fragment onCreate");
+        LoggUtil.log("Content2Fragment onCreate");
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -77,7 +77,7 @@ public class Content2Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        LogUtil.log("Content2Fragment onCreateView");
+        LoggUtil.log("Content2Fragment onCreateView");
         View view = inflater.inflate(R.layout.fragment_content2, container, false);
         TextView tv = view.findViewById(R.id.tv_fragment_content2);
         tv.setText(mParam1 + "," + mParam2);
@@ -87,50 +87,50 @@ public class Content2Fragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        LogUtil.log("Content2Fragment onActivityCreated");
+        LoggUtil.log("Content2Fragment onActivityCreated");
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        LogUtil.log("Content2Fragment onStart");
+        LoggUtil.log("Content2Fragment onStart");
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        LogUtil.log("Content2Fragment onResume");
+        LoggUtil.log("Content2Fragment onResume");
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        LogUtil.log("Content2Fragment onPause");
+        LoggUtil.log("Content2Fragment onPause");
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        LogUtil.log("Content2Fragment onStop");
+        LoggUtil.log("Content2Fragment onStop");
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        LogUtil.log("Content2Fragment onDestroyView");
+        LoggUtil.log("Content2Fragment onDestroyView");
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        LogUtil.log("Content2Fragment onDestroy");
+        LoggUtil.log("Content2Fragment onDestroy");
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
         mListener = null;
-        LogUtil.log("Content2Fragment onDetach");
+        LoggUtil.log("Content2Fragment onDetach");
     }
 
     // TODO: Rename method, update argument and hook method into UI event

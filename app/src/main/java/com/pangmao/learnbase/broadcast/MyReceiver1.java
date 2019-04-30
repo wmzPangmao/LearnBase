@@ -13,5 +13,6 @@ public class MyReceiver1 extends BroadcastReceiver {
         // an Intent broadcast.
         String msg = intent.getStringExtra("data");
         Toast.makeText(context, "消息1:"+msg, Toast.LENGTH_SHORT).show();
+
     }
 }

@@ -73,6 +73,11 @@
         <activity android:name=".broadcast.BroadcastActivity"/>
         <activity android:name=".handler.HandlerActivity"/>
         <activity android:name=".fragment.Fragment2Activity"/>
+
+        <receiver android:name=".broadcast.MyReceiver1" />
+        <receiver android:name=".broadcast.MyReceiver2" />
+        <receiver android:name=".broadcast.MyReceiver3" />
+        <receiver android:name=".broadcast.MyLocalReceiver" />
     </application>
 
 </manifest>
