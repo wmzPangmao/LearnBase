@@ -74,8 +74,24 @@
         <activity android:name=".handler.HandlerActivity"/>
         <activity android:name=".fragment.Fragment2Activity"/>
 
-        <receiver android:name=".broadcast.MyReceiver1" />
-        <receiver android:name=".broadcast.MyReceiver2" />
+        <receiver
+            android:name=".broadcast.MyReceiver1"
+            android:enabled="true"
+            android:exported="true"> <!--是否允许广播接收器接收本程序以外的广播-->
+            <intent-filter android:priority="8">
+                <action android:name="com.pangmao.learnBase.Broadcast.receiver1"/> <!--想要接收的广播-->
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".broadcast.MyReceiver2"
+            android:enabled="true"
+            android:exported="true"> <!--是否允许广播接收器接收本程序以外的广播-->
+            <intent-filter android:priority="9">
+                <!--想要接收的广播-->
+                <action android:name="com.pangmao.learnBase.Broadcast.receiver1"/>
+                <action android:name="com.pangmao.learnBase.Broadcast.receiver2"/>
+            </intent-filter>
+        </receiver>
         <receiver android:name=".broadcast.MyReceiver3" />
         <receiver android:name=".broadcast.MyLocalReceiver" />
     </application>

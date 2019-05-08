@@ -22,29 +22,39 @@
         android:id="@+id/btn_broadcast_cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="53dp"
+        android:layout_marginTop="28dp"
         android:text="注销"
         app:layout_constraintStart_toStartOf="@+id/btn_broadcast_register"
         app:layout_constraintTop_toBottomOf="@+id/btn_broadcast_register"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"/>
 
     <Button
         android:id="@+id/btn_broadcast_normal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="28dp"
         android:text="普通广播"
         app:layout_constraintStart_toStartOf="@+id/btn_broadcast_cancel"
         app:layout_constraintTop_toBottomOf="@+id/btn_broadcast_cancel"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"/>
 
     <Button
         android:id="@+id/btn_broadcast_order"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="28dp"
         android:text="有序广播"
         app:layout_constraintStart_toStartOf="@+id/btn_broadcast_normal"
         app:layout_constraintTop_toBottomOf="@+id/btn_broadcast_normal"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"/>
+
+    <Button
+        android:id="@+id/btn_broadcast_local"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="本地广播"
+        app:layout_constraintStart_toStartOf="@+id/btn_broadcast_order"
+        app:layout_constraintTop_toBottomOf="@+id/btn_broadcast_order"
+        tools:ignore="MissingConstraints"/>
 </android.support.constraint.ConstraintLayout>
