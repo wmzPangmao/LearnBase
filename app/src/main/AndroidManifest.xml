@@ -3,6 +3,8 @@
           xmlns:tools="http://schemas.android.com/tools"
           package="com.pangmao.learnbase">
 
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
     <application
         android:name=".BaseApplication"
         android:allowBackup="true"
