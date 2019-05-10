@@ -1,11 +1,13 @@
 package com.pangmao.learnbase;
 
-import android.app.Application;
+import com.pangmao.learnbase.savedata.SpStorageUtil;
+
+import org.litepal.LitePalApplication;
 
 /**
  * @author Administrator
  */
-public class BaseApplication extends Application {
+public class BaseApplication extends LitePalApplication {
 
     private String appStr = "";
 
@@ -14,6 +16,7 @@ public class BaseApplication extends Application {
         super.onCreate();
 
         appStr = "init Learn";
+        SpStorageUtil.init(getContext(), "LearnSharedData");
     }
 
     public String getAppStr() {

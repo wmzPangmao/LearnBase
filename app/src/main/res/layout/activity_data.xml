@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".savedata.DataActivity">
+
+    <Button
+        android:id="@+id/btn_data_file_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="文件存储"
+        app:layout_constraintEnd_toEndOf="@+id/btn_data_file_read"
+        app:layout_constraintStart_toStartOf="@+id/btn_data_file_read"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <Button
+        android:id="@+id/btn_data_file_read"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="文件读取"
+        app:layout_constraintEnd_toEndOf="@+id/btn_data_shared_save"
+        app:layout_constraintStart_toStartOf="@+id/btn_data_shared_save"
+        app:layout_constraintTop_toBottomOf="@+id/btn_data_file_save"
+        />
+
+    <Button
+        android:id="@+id/btn_data_shared_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="49dp"
+        android:text="shared存储"
+        app:layout_constraintEnd_toEndOf="@+id/btn_data_shared_read"
+        app:layout_constraintStart_toStartOf="@+id/btn_data_shared_read"
+        app:layout_constraintTop_toBottomOf="@+id/btn_data_file_read"
+        />
+
+    <Button
+        android:id="@+id/btn_data_shared_read"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="49dp"
+        android:layout_marginLeft="49dp"
+        android:text="shared读取"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_data_litepal_query"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <Button
+        android:id="@+id/btn_data_litepal_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="59dp"
+        android:layout_marginEnd="86dp"
+        android:layout_marginRight="86dp"
+        android:text="LitePal增"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <Button
+        android:id="@+id/btn_data_litepal_del"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:text="Litepal删"
+        app:layout_constraintStart_toStartOf="@+id/btn_data_litepal_add"
+        app:layout_constraintTop_toBottomOf="@+id/btn_data_litepal_add"
+        />
+
+    <Button
+        android:id="@+id/btn_data_litepal_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="48dp"
+        android:text="Litepal改"
+        app:layout_constraintStart_toStartOf="@+id/btn_data_litepal_del"
+        app:layout_constraintTop_toBottomOf="@+id/btn_data_litepal_del"
+        />
+
+    <Button
+        android:id="@+id/btn_data_litepal_query"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="LitePal查"
+        app:layout_constraintStart_toStartOf="@+id/btn_data_litepal_update"
+        app:layout_constraintTop_toBottomOf="@+id/btn_data_litepal_update"
+        />
+
+    <Button
+        android:id="@+id/btn_data_litepal_deleteall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Litepal删除所有"
+        app:layout_constraintStart_toStartOf="@+id/btn_data_litepal_query"
+        app:layout_constraintTop_toBottomOf="@+id/btn_data_litepal_query"
+        />
+</android.support.constraint.ConstraintLayout>

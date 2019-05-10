@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="Student"/>   <!-- 数据库名-->
+
+    <version value="3"/>          <!-- 数据库版本号-->
+
+    <list>
+        <mapping class="com.pangmao.learnbase.savedata.Student"/>  <!-- 映射模型类-->
+    </list>
+</litepal>

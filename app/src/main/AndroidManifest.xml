@@ -4,6 +4,8 @@
           package="com.pangmao.learnbase">
 
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:name=".BaseApplication"
@@ -79,23 +81,32 @@
         <receiver
             android:name=".broadcast.MyReceiver1"
             android:enabled="true"
-            android:exported="true"> <!--是否允许广播接收器接收本程序以外的广播-->
+            android:exported="true"> <!-- 是否允许广播接收器接收本程序以外的广播 -->
             <intent-filter android:priority="8">
-                <action android:name="com.pangmao.learnBase.Broadcast.receiver1"/> <!--想要接收的广播-->
+                <action android:name="com.pangmao.learnBase.Broadcast.receiver1"/> <!-- 想要接收的广播 -->
             </intent-filter>
         </receiver>
         <receiver
             android:name=".broadcast.MyReceiver2"
             android:enabled="true"
-            android:exported="true"> <!--是否允许广播接收器接收本程序以外的广播-->
+            android:exported="true"> <!-- 是否允许广播接收器接收本程序以外的广播 -->
             <intent-filter android:priority="9">
-                <!--想要接收的广播-->
+
+                <!-- 想要接收的广播 -->
                 <action android:name="com.pangmao.learnBase.Broadcast.receiver1"/>
                 <action android:name="com.pangmao.learnBase.Broadcast.receiver2"/>
             </intent-filter>
         </receiver>
-        <receiver android:name=".broadcast.MyReceiver3" />
-        <receiver android:name=".broadcast.MyLocalReceiver" />
+        <receiver android:name=".broadcast.MyReceiver3"/>
+        <receiver android:name=".broadcast.MyLocalReceiver"/>
+
+        <provider
+            android:name=".savedata.MyProvider"
+            android:authorities="com.pangmao.learnbase.provider"
+            android:enabled="true"
+            android:exported="true"/>
+
+        <activity android:name=".savedata.DataActivity" />
     </application>
 
 </manifest>

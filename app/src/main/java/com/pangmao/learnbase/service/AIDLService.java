@@ -40,7 +40,7 @@ public class AIDLService extends Service {
                     mBooks = new ArrayList<>();
                 }
                 if (book == null) {
-                    LoggUtil.log("Book is null in In");
+                    LoggUtil.log("Student is null in In");
                     book = new Book();
                 }
                 //尝试修改book的参数，主要是为了观察其到客户端的反馈
