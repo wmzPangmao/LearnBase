@@ -1,20 +1,20 @@
 package com.pangmao.learnbase.activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
 import com.pangmao.learnbase.BaseActivity;
 import com.pangmao.learnbase.R;
+import com.pangmao.learnbase.util.LoggUtil;
 
 /**
  * @author wangmingzhi
  */
 public class SecondActivity extends BaseActivity {
 
-    public final static String ACTION = "android.intent.action.SencondActivity";
+    public final static String ACTION = "android.intent.action.SecondActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,7 @@ public class SecondActivity extends BaseActivity {
         if (intent != null){
             tvAction.setText("Action:" + intent.getAction());
             tvCategory.setText("Category:" + intent.getCategories());
+            LoggUtil.log(intent.getDataString());
         }else {
             tvAction.setText("Action:" + "空");
             tvCategory.setText("Category:" + "空");

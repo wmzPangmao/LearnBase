@@ -20,10 +20,12 @@ public class MyProvider extends ContentProvider {
     private static final int TABLE1_DIR = 0;
     private static final int TABLE1_ITEM = 1;
 
+    private static final String AUTHORITY = "com.pangmao.learnbase.provider";
+
     private static UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
     static {
-        uriMatcher.addURI("", "student", TABLE1_DIR);
-        uriMatcher.addURI("", "student/#", TABLE1_ITEM);
+        uriMatcher.addURI(AUTHORITY, "student", TABLE1_DIR);
+        uriMatcher.addURI(AUTHORITY, "student/#", TABLE1_ITEM);
     }
 
     @Override

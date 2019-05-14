@@ -23,14 +23,17 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".service.ServiceActivity"/>
+        <activity android:name=".service.ServiceActivity" />
         <activity android:name=".activity.IntentActivity"/>
         <activity android:name=".activity.SecondActivity">
             <intent-filter>
-                <action android:name="android.intent.action.SencondActivity"/>
+                <action android:name="android.intent.action.SecondActivity"/>
 
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.MYDEF"/>
+                <data android:mimeType="vnd.android.cursor.dir/vnd.com.pangmao.learnbase.provider.student"
+                      android:scheme="content"/>
+                <data android:mimeType="image/*" android:scheme="file"/>
             </intent-filter>
         </activity>
 

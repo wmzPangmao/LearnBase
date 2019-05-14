@@ -29,6 +29,10 @@ android {
         }
     }
 
+    repositories {
+        mavenCentral()
+    }
+
 //    externalNativeBuild {
 //        cmake {
 //            path "CMakeLists.txt"
@@ -47,4 +51,6 @@ dependencies {
     implementation 'cn.hutool:hutool-all:4.5.1'
     implementation 'pub.devrel:easypermissions:1.2.0'
     implementation 'org.litepal.android:core:2.0.0'
+    //noinspection GradleDependency
+    implementation group: 'com.google.guava', name: 'guava', version: '24.1-android'
 }

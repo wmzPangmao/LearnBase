@@ -3,7 +3,7 @@ package com.pangmao.learnbase.activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,7 +11,9 @@ import android.widget.Button;
 
 import com.pangmao.learnbase.BaseActivity;
 import com.pangmao.learnbase.R;
-import com.pangmao.learnbase.handler.HandlerActivity;
+import com.pangmao.learnbase.util.FileUtil;
+
+import java.io.File;
 
 /**
  * @author wangmingzhi
@@ -58,11 +60,14 @@ public class IntentActivity extends BaseActivity implements View.OnClickListener
             case R.id.btn_intent_action:
                 intent = new Intent();
                 intent.setAction(SecondActivity.ACTION);
+                intent.setDataAndType(Uri.fromFile(new File(FileUtil.path + "111.png")),
+                        "image/png");
                 break;
             case R.id.btn_intent_action2:
                 intent = new Intent();
                 intent.setAction(SecondActivity.ACTION);
                 intent.addCategory("android.intent.category.MYDEF");
+                intent.setData(Uri.parse("content://com.pangmao.learnbase.provider/student"));
                 break;
             case R.id.btn_intent_action3:
                 intent = new Intent();
@@ -74,7 +79,7 @@ public class IntentActivity extends BaseActivity implements View.OnClickListener
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }else {
-            Log.d("TAG", "Action:" + intent.getAction() + "\tCategory" + intent.getCategories() + "匹配不存在!");
+            Log.d("TAG", "Action:" + intent.getAction() + "匹配不存在!");
         }
     }
 
