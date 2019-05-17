@@ -2,7 +2,7 @@ package com.pangmao.learnbase.handler;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.pangmao.learnbase.util.LoggUtil;

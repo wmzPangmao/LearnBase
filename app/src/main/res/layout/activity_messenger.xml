@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".service.MessengerActivity">
 
-    <android.support.v7.widget.Toolbar xmlns:app="http://schemas.android.com/apk/res-auto"
+    <androidx.appcompat.widget.Toolbar xmlns:app="http://schemas.android.com/apk/res-auto"
                                        android:id="@+id/tb_toolbar"
                                        android:layout_width="0dp"
                                        android:layout_height="?attr/actionBarSize"
@@ -24,7 +24,7 @@
             android:layout_gravity="center"
             android:text="BindService-使用Messenger" />
 
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <Button
         android:id="@+id/btn_service_bind2"
@@ -59,4 +59,4 @@
         app:layout_constraintStart_toStartOf="@+id/btn_service_unbind2"
         app:layout_constraintTop_toBottomOf="@+id/btn_service_unbind2"/>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
