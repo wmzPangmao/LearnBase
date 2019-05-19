@@ -15,7 +15,7 @@ public class MyReceiver2 extends BroadcastReceiver {
         // TODO: This method is called when the BroadcastReceiver is receiving
         // an Intent broadcast.
         //中断广播
-        abortBroadcast();
+       // abortBroadcast();
         String msg = intent.getStringExtra("data");
         LoggUtil.log("消息2:" + msg);
 //        Toast.makeText(context, "消息2:"+msg, Toast.LENGTH_SHORT).show();

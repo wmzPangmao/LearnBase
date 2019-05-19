@@ -7,6 +7,25 @@
                                                    tools:context=".broadcast.BroadcastActivity"
                                                    tools:layout_editor_absoluteY="25dp">
 
+    <androidx.appcompat.widget.Toolbar xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/tb_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="学习Boradcast" />
+
+    </androidx.appcompat.widget.Toolbar>
+
     <Button
         android:id="@+id/btn_broadcast_register"
         android:layout_width="wrap_content"
