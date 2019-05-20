@@ -42,12 +42,6 @@ public class MainActivity extends BaseActivity implements
         ButterKnife.bind(this);
         context = this;
 
-//        BaseApplication app = (BaseApplication) getApplication();
-//        String appStr = app.getAppStr();
-//        LoggUtil.log(appStr);
-//        appStr = "123";
-//        app.setAppStr(appStr);
-
         //检查权限，防止重复获取
         mPermissions = PermissionUtil.getDeniedPermissions(this, mPermissions);
         if (mPermissions != null && mPermissions.length > 0) {
@@ -119,5 +113,7 @@ public class MainActivity extends BaseActivity implements
         LoggUtil.log("kkkk");
     }
 
-
+    public void testTrans() {
+        TestFunc.testAlarm(context);
+    }
 }
